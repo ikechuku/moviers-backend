@@ -14,6 +14,6 @@ deploy:
   provider: heroku
   api_key:
     secure: 53982ccb-6537-48cf-bd62-4d51807bdc47
-  app: movie-rec-system
+  app: fierce-fortress-64893
   on:
     repo: ikechuku/moviers-backend
