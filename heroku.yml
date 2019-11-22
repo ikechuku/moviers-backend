@@ -1,3 +1,5 @@
 build:
   docker:
     web: Dockerfile
+run:
+  web: gunicorn mysite.wsgi --log-file -
