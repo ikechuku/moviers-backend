@@ -7,3 +7,10 @@ services:
       - ".:/api"
     ports:
       - "8000:8000"
+    depends_on:
+      - migration
+    migration:
+      command: python manage.py migrate --noinput
+      volumes:
+        - ".:/api"
+        
