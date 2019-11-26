@@ -10,6 +10,8 @@ services:
       - "27017:27017"
     depends_on:
       - migration
+  mongo:
+    image: mongo
   migration:
     build: .
     command: python manage.py migrate --noinput
