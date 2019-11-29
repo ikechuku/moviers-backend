@@ -6,7 +6,7 @@ print("You are using production settings")
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'HOST': config('DB_URL')
+        'HOST': 'mongodb://admin:FiiQsn0VWmJBiV1j@SG-moviers-28158.servers.mongodirector.com:27017/admin'
     }
 }
 
