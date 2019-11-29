@@ -84,8 +84,7 @@ DATABASES = {
     "default": {
         'ENGINE': 'djongo',
         'NAME': 'testingmoviers',
-        'HOST': config('DB_URL'),
-        'PORT': config('PORT', cast=int),
+        'HOST': 'mongodb://admin:<password>@SG-testingmoviers-28258.servers.mongodirector.com:27017/admin'
     }
 }
 
