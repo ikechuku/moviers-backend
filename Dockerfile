@@ -9,7 +9,7 @@ RUN \
     python3 -m pip install -r requirements.txt 
 COPY . /api/
 
-RUN python manage.py collectstatic --noinput
+# RUN python manage.py collectstatic --noinput
 
 RUN adduser -D myuser
 USER myuser
