@@ -83,7 +83,7 @@ DATABASES = {
     "default": {
         'ENGINE': 'djongo',
         'NAME': 'testingmoviers',
-        'HOST': 'mongodb://admin:<password>@SG-testingmoviers-28258.servers.mongodirector.com:27017/admin'
+        'HOST': 'mongodb://admin:j9D2hc7SOwrCJqhZ@SG-testingmoviers-28258.servers.mongodirector.com:27017/admin'
     }
 }
 
