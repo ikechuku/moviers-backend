@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,6 +26,7 @@ SECRET_KEY = 'fb307_f*^21$@h2_sld5773%7(1prhghnjyov)@mmhyzk8%ph('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = ['*']
 
 
@@ -37,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home'
+    'home',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -75,10 +78,12 @@ WSGI_APPLICATION = 'movierec.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+
 DATABASES = {
-    'default': {
+    "default": {
         'ENGINE': 'djongo',
-        'HOST': 'mongodb://admin:FiiQsn0VWmJBiV1j@SG-moviers-28158.servers.mongodirector.com:27017/admin'
+        'NAME': 'testingmoviers',
+        'HOST': 'mongodb://admin:<password>@SG-testingmoviers-28258.servers.mongodirector.com:27017/admin'
     }
 }
 
@@ -122,3 +127,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+print("debug is set to", DEBUG)
+if DEBUG == "True":
+    from . import local
+elif DEBUG == "False":
+    from . import production

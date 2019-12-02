@@ -7,6 +7,7 @@ services:
       - ".:/api"
     ports:
       - "8000:8000"
+      - "27017:27017"
     depends_on:
       - migration
   migration:
